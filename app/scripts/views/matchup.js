@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 
 import store from '../store';
+import Dog from '../models/dog';
 
 const Matchup = Backbone.View.extend({
   initialize: function (){
@@ -18,14 +19,9 @@ const Matchup = Backbone.View.extend({
     let self = this;
     let randomA = Math.ceil(Math.random()*store.dogList.length);
     let randomB = Math.ceil(Math.random()*store.dogList.length);
-    //NEED TO MAKE RANDOM IDS NOT MATCH
-    // function dontMatch (a,b) {
-    //   if (a===b) {
-    //     let b = Math.ceil(Math.random()*store.dogList.length);
-    //     dontMatch(randomA,b);
-    //   }
-    // }
-    // dontMatch(randomA,randomB);
+    while(randomA===randomB) {
+      randomB = Math.ceil(Math.random()*store.dogList.length);
+    }
     let currentDog = store.dogList.get(randomA);
       this.$el.append(`
         <div class="dogvote" data-id="${randomA}">
@@ -41,13 +37,20 @@ const Matchup = Backbone.View.extend({
         </div>
       `);
     $('.dogvote').click(function(){
-      console.log($(this).data().id);
-      // NEED TO HAVE A DEFAULT VOTE VALUE TO WORK!
-      // store.dogList.get($(this).data().id).set({
-      //   votes: store.dogList.get($(this).data().id).get('votes') + 1
-      // });
+        let currentDog = new Dog();
+        currentDog = store.dogList.get($(this).data().id);
+      console.log(currentDog.get('id'));
+      $.ajax({
+        url: 'https://best-in-show-dogs.herokuapp.com/votes',
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+          dog_id: currentDog.get('id')
+        })
+      });
 
-      // THEN SAVE TO SERVER
+      console.log(currentDog);
 
       // add in any swifty movey stuff before re-rendering
 

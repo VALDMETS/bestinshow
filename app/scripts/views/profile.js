@@ -24,9 +24,9 @@ const ProfileView = Backbone.View.extend({
         <h3>${currentDog.get('name')}</h3>
         <img class="profileimage">
         <p>${currentDog.get('breed')}</p>
-        <p>${currentDog.get('description')}</p>`
-        // <p>${currentDog.get('votes')}</p>
-      );
+        <p>${currentDog.get('description')}</p>
+        <p>${currentDog.get('vote_count')}</p>
+      `);
     }
     return this;
   }
