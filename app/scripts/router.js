@@ -2,6 +2,8 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 
 import DogsView from './views/dogs';
+import ProfileView from './views/profile';
+import SubmitView from './views/submit';
 import store from './store';
 
 const Router = Backbone.Router.extend({
@@ -21,11 +23,12 @@ const Router = Backbone.Router.extend({
     $('main').empty().append(dogsView.render().$el);
   },
   submitFunction: function () {
-    console.log('submit');
+    let submitView = new SubmitView();
+    $('main').empty().append(submitView.render().$el);
   },
   profileFunction: function (id) {
-    console.log(id);
-    console.log(store.dogList);
+    let profileView = new ProfileView(id);
+    $('main').empty().append(profileView.render(id).$el);
   }
 });
 

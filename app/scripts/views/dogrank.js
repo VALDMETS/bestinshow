@@ -5,11 +5,6 @@ import router from '../router';
 import Dog from '../models/dog';
 import DogList from '../collections/doglist';
 
-//temporary list definition
-
-// let tempDogList = new DogList();
-// tempDogList.add
-
 const DogRank = Backbone.View.extend({
   initialize: function (dog, rankIndex){
 
