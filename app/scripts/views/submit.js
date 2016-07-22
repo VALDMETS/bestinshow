@@ -30,9 +30,10 @@ const SubmitView = Backbone.View.extend({
       name: $('#newdogname').val(),
       breed: $('#newdogbreed').val(),
       description: $('#newdogdescription').val(),
-      success: function () {
-        console.log('things happened');
-      }
+      //NEED SERVER TO RETURN SUCCESS
+      // success: function () {
+      //   router.navigate('matchup', {trigger:true});
+      // }
     });
   }
 });

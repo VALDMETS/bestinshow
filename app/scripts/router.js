@@ -1,7 +1,9 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 
-import DogsView from './views/dogs';
+import Matchup from './views/matchup';
+import Top5View from './views/top5'
+;import DogsView from './views/dogs';
 import ProfileView from './views/profile';
 import SubmitView from './views/submit';
 import store from './store';
@@ -16,7 +18,13 @@ const Router = Backbone.Router.extend({
     '/*'       : 'matchupFunction'
   },
   matchupFunction: function () {
-    console.log('matchup');
+    let matchup = new Matchup();
+    // console.log(store.dogList.matchupMaker());
+    // let top5View = new Top5View();
+    // let matchup = new Matchup();
+    // $('main').empty().append(top5View.render().$el).append(matchup.render().$el);
+
+    $('main').empty().append(matchup.$el);
   },
   dogsFunction: function () {
     let dogsView = new DogsView();

@@ -9,14 +9,7 @@ const DogsView = Backbone.View.extend({
     store.dogList.on('update', () => {
       this.render();
     });
-    store.dogList.fetch({
-      success: function () {
-        console.log(store.dogList);
-      },
-      error: function () {
-        console.log('things died');
-      }
-    });
+    store.dogList.fetch();
   },
   tagName: 'section',
   className: 'doglist',
