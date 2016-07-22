@@ -22,7 +22,7 @@ const DogRank = Backbone.View.extend({
     this.$el.append(`
       <span class="rank">#${i+1}</span>
       <img class="dogimage">
-      <span class="dogname">${dog.name}</span>
+      <span class="dogname">${dog.get('name')}</span>
       `);
     return this;
   },
