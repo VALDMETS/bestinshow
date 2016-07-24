@@ -7,8 +7,8 @@ body {
   color: white;
 }
 img {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 400px;
+  max-height: 400px;
   width: 100%;
   height: auto;
 }
@@ -63,20 +63,113 @@ h4 {
   margin: 20px auto;
   width: 80%;
   height: 100px;
+  vertical-align: top;
   span {
-    padding: 0 0 20px 20px;
+    display: inline-block;
     font-size: 30px;
+    vertical-align: top;
+    padding: 40px 10px 20px 20px;
 
   }
 }
 .top5dog {
   margin-top: 20px;
+  padding: 10px 0 10px 4%;
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   display: block;
-  width: 20%;
+  width: 16%;
   float: left;
   span {
-    padding-left: 10px;
+    font-size: 11px;
+    font-weight: 300;
+  }
+}
+.top5widget {
+  h4 {
+    margin: 20px 0 10px 0;
+  }
+}
+.doglist {
+  vertical-align: top;
+}
+.dogprofile {
+  h3 {
+    font-size: 30px;
+    text-align: center;
+    margin: 30px 0 10px 0;
+  }
+  .dogimage {
+    display: block;
+    height: 250px;
+    width: 250px;
+    border-radius: 200px;
+    overflow: hidden;
+    float: left;
+    margin-left: 10%;
+  }
+  li {
+    text-align: left;
+    padding: 10px;
+    margin-left: 40px;
+  }
+  .textbox {
+    width: 60%;
+    float: left;
+  }
+}
+form {
+  max-width: 1000px;
+  margin: 0 auto;
+  h3 {
+    font-size: 30px;
+    text-align: center;
+    margin: 30px 0 10px 0;
+  }
+  input {
+    display: block;
+    text-align: center;
+    width: 85%;
+    font-size: 24px;
+    margin: 14px auto;
+  }
+  #newdogsubmit {
+    border: 2px solid white;
+    width: 50%;
+    background: none;
+    color: white;
+  }
+}
+
+@media (min-width: 860px) {
+  .matchup {
+    display: block;
+    float: right;
+    width: 67%;
+    height: auto;
+    .dogvote {
+      display: block;
+      width: 50%;
+      float: left;
+    }
+  }
+  .top5widget {
+    display: block;
+    float: left;
+    width: 180px;
+    border: 2px solid white;
+    padding: 10px;
+    margin: 20px;
+    div {
+      width: 80%;
+      display: block;
+      float: none;
+      margin: 0 auto;
+      border: none;
+      border-bottom: 1px solid white;
+      span {
+        font-size: 16px;
+      }
+    }
   }
 }

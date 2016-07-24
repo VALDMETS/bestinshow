@@ -24,7 +24,7 @@ const Matchup = Backbone.View.extend({
     }
     let currentDog = store.dogList.get(randomA);
       this.$el.append(`
-        <h4>Pick your favorite dog</h4>
+        <h4>Pick your favorite dog!</h4>
         <div class="dogvote" data-id="${randomA}">
           <h3>${currentDog.get('name')}</h3>
           <div class="dogimagematchup">
@@ -53,6 +53,7 @@ const Matchup = Backbone.View.extend({
           dog_id: currentDog.get('id')
         })
       });
+      store.dogTop5.fetch();
 
       // add in any swifty movey stuff before re-rendering
 

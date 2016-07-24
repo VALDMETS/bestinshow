@@ -14,7 +14,7 @@ const DogsView = Backbone.View.extend({
   tagName: 'section',
   className: 'doglist',
   render: function () {
-    this.$el.html('');
+    this.$el.html('<h4>Ranking All Hot Dogs');
     store.dogList.forEach((dog, i) => {
       let dogRank = new DogRank();
       this.$el.append(dogRank.render(dog, i).$el);

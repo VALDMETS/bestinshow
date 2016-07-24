@@ -16,7 +16,7 @@ const DogsView = Backbone.View.extend({
   tagName: 'section',
   className: 'top5widget',
   render: function () {
-    this.$el.html('');
+    this.$el.html('<h4>Current Hot Dogs</h4>');
     for (var i = 0; i < 5; i++) {
       this.$el.append(`
         <div class="top5dog">

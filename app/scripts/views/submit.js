@@ -13,10 +13,11 @@ const SubmitView = Backbone.View.extend({
       this.$el.append(`
         <form>
           <h3>Submit a New Dog!</h3>
-          <input type="text" id="newdogname" placeholder="Dog's Name">
+          <h4>Are you prepared to pitt your dog against the hottest dogs on the web?</h4>
+          <input type="text" id="newdogname" placeholder="Dog's name">
           <input type="text" id="newdogimage" placeholder="Link to your dog's picture">
-          <input type="text" id="newdogbreed" placeholder="Dog's Breed">
-          <input type="text" id="newdogdescription" placeholder="Tell the world about your dog!">
+          <input type="text" id="newdogbreed" placeholder="Dog's breed">
+          <input type="text" id="newdogdescription" placeholder="What makes your dog special?">
           <input type="submit" id="newdogsubmit">
       `);
     return this;
