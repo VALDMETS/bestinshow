@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
+import _ from 'underscore';
 
 import DogRank from './dogrank';
 import store from '../store';
@@ -16,12 +17,11 @@ const DogsView = Backbone.View.extend({
   className: 'top5widget',
   render: function () {
     this.$el.html('');
-    console.log(store.dogTop5.get('2'));
     for (var i = 0; i < 5; i++) {
       this.$el.append(`
         <div class="top5dog">
           <span>#${i+1}</span>
-          <span>${store.dogTop5.get(String(i+1)).get('name')}</span>
+          <span>${store.dogTop5.models[i].get('name')}</span>
         </div>
         `);
     }

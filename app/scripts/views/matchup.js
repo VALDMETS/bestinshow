@@ -26,20 +26,19 @@ const Matchup = Backbone.View.extend({
       this.$el.append(`
         <div class="dogvote" data-id="${randomA}">
           <h3>${currentDog.get('name')}</h3>
-          <img class="profileimage">
+          <img class="profileimage" src="${currentDog.get('img_url')}">
         </div>
       `);
     currentDog = store.dogList.get(randomB);
       this.$el.append(`
         <div class="dogvote" data-id="${randomB}">
           <h3>${currentDog.get('name')}</h3>
-          <img class="profileimage">
+          <img class="profileimage" src="${currentDog.get('img_url')}">
         </div>
       `);
     $('.dogvote').click(function(){
         let currentDog = new Dog();
         currentDog = store.dogList.get($(this).data().id);
-      console.log(currentDog.get('id'));
       $.ajax({
         url: 'https://best-in-show-dogs.herokuapp.com/votes',
         type: 'POST',
@@ -50,11 +49,8 @@ const Matchup = Backbone.View.extend({
         })
       });
 
-      console.log(currentDog);
-
       // add in any swifty movey stuff before re-rendering
 
-      // VVV MAY BE UNNECESSARY, AS IT IS LISTENING FOR CHANGES TO LIST
       self.render();
     });
     return this;

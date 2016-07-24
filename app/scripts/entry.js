@@ -5,3 +5,5 @@ import router from './router';
 import store from './store';
 
 Backbone.history.start();
+
+console.log(store.dogList);
