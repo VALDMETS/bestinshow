@@ -20,8 +20,9 @@ const Router = Backbone.Router.extend({
   matchupFunction: function () {
     let matchup = new Matchup();
     let top5View = new Top5View();
-    $('main').empty().append(top5View.$el);
-    $('main').append(matchup.$el);
+    $('main').empty().append(matchup.$el);
+    $('main').append(top5View.$el);
+
   },
   dogsFunction: function () {
     let dogsView = new DogsView();

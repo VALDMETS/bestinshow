@@ -30,6 +30,7 @@ const SubmitView = Backbone.View.extend({
       name: $('#newdogname').val(),
       breed: $('#newdogbreed').val(),
       description: $('#newdogdescription').val(),
+      img_url: $('#newdogimage').val()
       //NEED SERVER TO RETURN SUCCESS
       // success: function () {
       //   router.navigate('matchup', {trigger:true});

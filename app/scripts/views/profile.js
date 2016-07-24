@@ -22,10 +22,13 @@ const ProfileView = Backbone.View.extend({
     if (currentDog) {
       this.$el.append(`
         <h3>${currentDog.get('name')}</h3>
-        <img class="profileimage">
+        <p>with ${currentDog.get('vote_count')} votes</p>
+        <div class="dogimage">
+          <img src="${currentDog.get('img_url')}">
+        </div>
         <p>${currentDog.get('breed')}</p>
         <p>${currentDog.get('description')}</p>
-        <p>${currentDog.get('vote_count')}</p>
+
       `);
     }
     return this;

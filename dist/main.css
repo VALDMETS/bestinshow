@@ -1,3 +1,60 @@
+body {
+  background-color: #333;
+  font-family: sans-serif;
+  margin: 0;
+  color: white; }
 
+img {
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+  height: auto; }
+
+.dogimage {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  overflow: hidden; }
+
+.navbar {
+  width: 100%;
+  background-color: #BBB;
+  text-align: center;
+  padding: 10px; }
+  .navbar a {
+    padding: 5px 20px;
+    text-decoration: none; }
+
+h4 {
+  text-align: center;
+  font-weight: 200;
+  color: gray;
+  margin: 10px; }
+
+.dogimagematchup {
+  display: block;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin: auto; }
+
+.dogimageleaderboard {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden; }
+
+.dogvote {
+  display: block; }
+  .dogvote h3 {
+    margin: 20px;
+    text-align: center;
+    font-size: 30px; }
+
+.dogrankitem {
+  margin: 20px 0 0 20px; }
 
 /*# sourceMappingURL=main.css.map */

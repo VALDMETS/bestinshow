@@ -24,16 +24,21 @@ const Matchup = Backbone.View.extend({
     }
     let currentDog = store.dogList.get(randomA);
       this.$el.append(`
+        <h4>Pick your favorite dog</h4>
         <div class="dogvote" data-id="${randomA}">
           <h3>${currentDog.get('name')}</h3>
-          <img class="profileimage" src="${currentDog.get('img_url')}">
+          <div class="dogimagematchup">
+            <img src="${currentDog.get('img_url')}">
+          </div>
         </div>
       `);
     currentDog = store.dogList.get(randomB);
       this.$el.append(`
         <div class="dogvote" data-id="${randomB}">
           <h3>${currentDog.get('name')}</h3>
-          <img class="profileimage" src="${currentDog.get('img_url')}">
+          <div class="dogimagematchup">
+            <img src="${currentDog.get('img_url')}">
+          </div>
         </div>
       `);
     $('.dogvote').click(function(){
