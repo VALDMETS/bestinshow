@@ -18,8 +18,10 @@ const Matchup = Backbone.View.extend({
     <div class="container">
       <div class="top ">
         <div class="ping ">
-          <div class="player-one ">
-            <img class="circle-img avatar" src="./img/des.jpg">
+            <div class="dogvote player-one" data-id="${randomA}">
+              <h3>${currentDog.get('name')}</h3>
+              <img class="profileimage">
+            </div>
            </div>
          </div>
       </div>
@@ -28,9 +30,10 @@ const Matchup = Backbone.View.extend({
         </section>
         <div class="bottom">
           <div class="pong ">
-            <div class="player-two ">
-              <img class="circle-img avatar" src="./img/sd.png">
-             </div>
+            <div class="dogvote player-two" data-id="${randomB}">
+              <h3>${currentDog.get('name')}</h3>
+              <img class="profileimage">
+            </div>
            </div>
         </div>
       </div>
@@ -55,7 +58,7 @@ const Matchup = Backbone.View.extend({
 
     currentDog = store.dogList.get(randomB);
       this.$el.append(`
-        
+
         <div class="dogvote" data-id="${randomB}">
           <h3>${currentDog.get('name')}</h3>
           <img class="profileimage">

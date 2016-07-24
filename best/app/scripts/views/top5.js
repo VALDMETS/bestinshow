@@ -12,7 +12,6 @@ const DogsView = Backbone.View.extend({
     });
     store.dogTop5.fetch();
   },
-  tagName: 'section',
   className: 'top5widget',
   render: function () {
     this.$el.html('');
@@ -20,10 +19,11 @@ const DogsView = Backbone.View.extend({
     for (var i = 0; i < 5; i++) {
       this.$el.append(`
         <div class="top5dog">
-          <span>#${i+1}</span>
-          <span>${store.dogTop5.get(String(i+1)).get('name')}</span>
+          <h3>${i+1}</h3>
+          <span>${store.dogTop5.get( String(i+1) ).get('name')}</span>
+          <img src="${store.dogTop5.get( String(i+1)).get('thumb')}"
         </div>
-        `);
+      `);
     }
     return this;
   },
