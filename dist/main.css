@@ -1,3 +1,154 @@
+body {
+  background-color: #333;
+  font-family: sans-serif;
+  margin: 0;
+  color: white; }
 
+img {
+  max-width: 400px;
+  max-height: 400px;
+  width: 100%;
+  height: auto; }
+
+.dogimage {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  overflow: hidden; }
+
+.navbar {
+  width: 100%;
+  background-color: #BBB;
+  text-align: center;
+  padding: 10px; }
+  .navbar a {
+    padding: 5px 20px;
+    text-decoration: none; }
+
+h4 {
+  text-align: center;
+  font-weight: 200;
+  color: gray;
+  margin: 10px; }
+
+.dogimagematchup {
+  display: block;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  border: 2px solid white;
+  overflow: hidden;
+  margin: auto; }
+
+.dogimageleaderboard {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden; }
+
+.dogvote {
+  display: block; }
+  .dogvote h3 {
+    margin: 20px;
+    text-align: center;
+    font-size: 30px; }
+
+.dogrankitem {
+  margin: 20px auto;
+  width: 80%;
+  height: 100px;
+  vertical-align: top; }
+  .dogrankitem span {
+    display: inline-block;
+    font-size: 30px;
+    vertical-align: top;
+    padding: 40px 10px 20px 20px; }
+
+.top5dog {
+  margin-top: 20px;
+  padding: 10px 0 10px 4%;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  display: block;
+  width: 16%;
+  float: left; }
+  .top5dog span {
+    font-size: 11px;
+    font-weight: 300; }
+
+.top5widget h4 {
+  margin: 20px 0 10px 0; }
+
+.doglist {
+  vertical-align: top; }
+
+.dogprofile h3 {
+  font-size: 30px;
+  text-align: center;
+  margin: 30px 0 10px 0; }
+.dogprofile .dogimage {
+  display: block;
+  height: 250px;
+  width: 250px;
+  border-radius: 200px;
+  overflow: hidden;
+  float: left;
+  margin-left: 10%; }
+.dogprofile li {
+  text-align: left;
+  padding: 10px;
+  margin-left: 40px; }
+.dogprofile .textbox {
+  width: 60%;
+  float: left; }
+
+form {
+  max-width: 1000px;
+  margin: 0 auto; }
+  form h3 {
+    font-size: 30px;
+    text-align: center;
+    margin: 30px 0 10px 0; }
+  form input {
+    display: block;
+    text-align: center;
+    width: 85%;
+    font-size: 24px;
+    margin: 14px auto; }
+  form #newdogsubmit {
+    border: 2px solid white;
+    width: 50%;
+    background: none;
+    color: white; }
+
+@media (min-width: 860px) {
+  .matchup {
+    display: block;
+    float: right;
+    width: 67%;
+    height: auto; }
+    .matchup .dogvote {
+      display: block;
+      width: 50%;
+      float: left; }
+
+  .top5widget {
+    display: block;
+    float: left;
+    width: 180px;
+    border: 2px solid white;
+    padding: 10px;
+    margin: 20px; }
+    .top5widget div {
+      width: 80%;
+      display: block;
+      float: none;
+      margin: 0 auto;
+      border: none;
+      border-bottom: 1px solid white; }
+      .top5widget div span {
+        font-size: 16px; } }
 
 /*# sourceMappingURL=main.css.map */

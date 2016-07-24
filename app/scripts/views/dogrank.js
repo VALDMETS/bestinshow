@@ -16,7 +16,9 @@ const DogRank = Backbone.View.extend({
     this.$el.data().id = dog.id;
     this.$el.append(`
       <span class="rank">#${i+1}</span>
-      <img class="dogimage">
+      <div class="dogimageleaderboard">
+        <img src="${dog.get('img_url')}">
+      </div>
       <span class="dogname">${dog.get('name')}</span>
       `);
     return this;
