@@ -1,7 +1,6 @@
-@import 'variables';
-@import '_nav';
-
-
+body{
+  background: $blueberry;
+}
 .top-nav {
   color: $cream;
   display: flex;
@@ -20,7 +19,4 @@
       }
     }
   }
-
-
-
-
+}
