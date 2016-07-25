@@ -24,20 +24,18 @@ const ProfileView = Backbone.View.extend({
 
         <div class="profile">
           <div class="container">
-             <section class="heading">
-                  <div class="name" id="name">
-                    <h3>${currentDog.get('name')}</h3>
-                   </div>
-                  <div class="rank" id="rank">
-                    ${currentDog.get('rank')}
-                  </div>
-              </section>
+            <section class="heading">
+              <div class="name" id="name">
+                <h3>${currentDog.get('name')}</h3>
+                <h4>with ${currentDog.get('vote_count')} votes</h4>
+              </div>
+            </section>
               <main class="photo" id="photo">
-                  <img src="${currentDog.get('pic')}" class="circle-img">
+                <img src="${currentDog.get('img_url')}" class="circle-img">
                 <section class="voteBox" id="voteBox">VOTES:
                   <div class="voteCount">
                     <p>${currentDog.get('vote_count')}</p>
-                   </div>
+                  </div>
                 </section>
               </main>
           </div>
@@ -45,11 +43,11 @@ const ProfileView = Backbone.View.extend({
             <article class="bio">
               <div class="breed" id="breed">
                 <p>${currentDog.get('breed')}</p>
-               </div>
+              </div>
               <div class="description" id="description">
-                <p>${currentDog.get( 'description' )}</p>
-            </div>
-          </article>
+                <p>${currentDog.get('description')}</p>
+              </div>
+            </article>
           </footer>
         </div>
 
