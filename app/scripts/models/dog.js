@@ -7,7 +7,7 @@ const Dog = Backbone.Model.extend({
     name: '',
     breed: '',
     description: '',
-    image: '',
+    img_url: '',
     votes: 0
   }
 });
