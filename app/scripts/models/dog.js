@@ -1,7 +1,7 @@
 import Backbone from 'backbone';
 
 const Dog = Backbone.Model.extend({
-  urlRoot: 'https://best-in-show-dogs.herokuapp.com/dogs',
+  urlRoot: 'https://best-in-show-dogs.herokuapp.com',
   defaults: {
     id: '',
     name: '',

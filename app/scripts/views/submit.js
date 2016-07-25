@@ -11,19 +11,14 @@ const SubmitView = Backbone.View.extend({
   render: function () {
     this.$el.html('');
       this.$el.append(`
-        <div class="container">
-          <div class="logo"> </div>
-          <form class="submitForm cf" id="submitForm">
-            <input type="button" id="upload" class="uploadButton">
-            <input type="text" id="name" placeholder="Dog's Name" class="name">
-            <input type="text" id="breed" placeholder="Breed" class="breed">
-            <input type="text" id="description" placeholder="Description" class="description">
-            <input type="button" class="submitButton" value="SUBMIT" name="submit">
-          </form>
-          <footer>
-           <h2> MAY THE BEST DOG WIN </h2>
-        </footer>
-        </div>
+        <form>
+          <h3>Submit a New Dog!</h3>
+          <h4>Are you prepared to pitt your dog against the hottest dogs on the web?</h4>
+          <input type="text" id="newdogname" placeholder="Dog's name">
+          <input type="text" id="newdogimage" placeholder="Link to your dog's picture">
+          <input type="text" id="newdogbreed" placeholder="Dog's breed">
+          <input type="text" id="newdogdescription" placeholder="What makes your dog special?">
+          <input type="submit" id="newdogsubmit">
       `);
     return this;
   },
@@ -36,6 +31,7 @@ const SubmitView = Backbone.View.extend({
       name: $('#newdogname').val(),
       breed: $('#newdogbreed').val(),
       description: $('#newdogdescription').val(),
+      img_url: $('#newdogimage').val()
       //NEED SERVER TO RETURN SUCCESS
       // success: function () {
       //   router.navigate('matchup', {trigger:true});

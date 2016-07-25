@@ -21,34 +21,14 @@ const ProfileView = Backbone.View.extend({
     this.$el.html('');
     if (currentDog) {
       this.$el.append(`
-
-        <div class="profile">
-          <div class="container">
-            <section class="heading">
-              <div class="name" id="name">
-                <h3>${currentDog.get('name')}</h3>
-                <h4>with ${currentDog.get('vote_count')} votes</h4>
-              </div>
-            </section>
-              <main class="photo" id="photo">
-                <img src="${currentDog.get('img_url')}" class="circle-img">
-                <section class="voteBox" id="voteBox">VOTES:
-                  <div class="voteCount">
-                    <p>${currentDog.get('vote_count')}</p>
-                  </div>
-                </section>
-              </main>
-          </div>
-          <footer class="info" id="info">
-            <article class="bio">
-              <div class="breed" id="breed">
-                <p>${currentDog.get('breed')}</p>
-              </div>
-              <div class="description" id="description">
-                <p>${currentDog.get('description')}</p>
-              </div>
-            </article>
-          </footer>
+        <h3>${currentDog.get('name')}</h3>
+        <h4>with ${currentDog.get('vote_count')} votes</h4>
+        <div class="dogimage">
+          <img src="${currentDog.get('img_url')}">
+        </div>
+        <div class="textbox">
+          <li>Breed: ${currentDog.get('breed')}</li>
+          <li>Facts: ${currentDog.get('description')}</li>
         </div>
 
       `);

@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
+import _ from 'underscore';
 
 import DogRank from './dogrank';
 import store from '../store';
@@ -12,18 +13,17 @@ const DogsView = Backbone.View.extend({
     });
     store.dogTop5.fetch();
   },
+  tagName: 'section',
   className: 'top5widget',
   render: function () {
-    this.$el.html('');
-    console.log(store.dogTop5.get('2'));
+    this.$el.html('<h4>Current Hot Dogs</h4>');
     for (var i = 0; i < 5; i++) {
       this.$el.append(`
         <div class="top5dog">
-          <h3>${i+1}</h3>
-          <span>${store.dogTop5.get( String(i+1) ).get('name')}</span>
-          <img src="${store.dogTop5.get( String(i+1)).get('thumb')}"
+          <span>#${i+1}</span>
+          <span>${store.dogTop5.models[i].get('name')}</span>
         </div>
-      `);
+        `);
     }
     return this;
   },

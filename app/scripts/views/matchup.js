@@ -13,32 +13,7 @@ const Matchup = Backbone.View.extend({
   },
   tagName: 'section',
   className: 'matchup',
-  template: function(){
-    return `
-    <div class="container">
-      <div class="top ">
-        <div class="ping ">
-            <div class="dogvote player-one" data-id="${randomA}">
-              <h3>${currentDog.get('name')}</h3>
-              <img class="profileimage">
-            </div>
-           </div>
-         </div>
-      </div>
-        <section class="middle">
-          <p> CAST YOUR VOTE </p>
-        </section>
-        <div class="bottom">
-          <div class="pong ">
-            <div class="dogvote player-two" data-id="${randomB}">
-              <h3>${currentDog.get('name')}</h3>
-              <img class="profileimage">
-            </div>
-           </div>
-        </div>
-      </div>
-    `;
-  },
+
   render: function () {
     this.$el.html('');
     let self = this;
@@ -47,29 +22,28 @@ const Matchup = Backbone.View.extend({
     while(randomA===randomB) {
       randomB = Math.ceil(Math.random()*store.dogList.length);
     }
-    let currentDog = store.dogList.get( randomA );
+    let currentDog = store.dogList.get(randomA);
       this.$el.append(`
-
+        <h4>Pick your favorite dog!</h4>
         <div class="dogvote" data-id="${randomA}">
           <h3>${currentDog.get('name')}</h3>
-          <img class="profileimage">
+          <div class="dogimagematchup">
+            <img src="${currentDog.get('img_url')}">
+          </div>
         </div>
       `);
-
     currentDog = store.dogList.get(randomB);
       this.$el.append(`
-
         <div class="dogvote" data-id="${randomB}">
           <h3>${currentDog.get('name')}</h3>
-          <img class="profileimage">
+          <div class="dogimagematchup">
+            <img src="${currentDog.get('img_url')}">
+          </div>
         </div>
-
       `);
-    $('.dogvote').click( function(){
+    $('.dogvote').click(function(){
         let currentDog = new Dog();
-        currentDog = store.dogList.get( $(this).data().id );
-      console.log(currentDog.get('id'));
-
+        currentDog = store.dogList.get($(this).data().id);
       $.ajax({
         url: 'https://best-in-show-dogs.herokuapp.com/votes',
         type: 'POST',
@@ -79,12 +53,10 @@ const Matchup = Backbone.View.extend({
           dog_id: currentDog.get('id')
         })
       });
-
-      console.log(currentDog);
+      store.dogTop5.fetch();
 
       // add in any swifty movey stuff before re-rendering
 
-      // VVV MAY BE UNNECESSARY, AS IT IS LISTENING FOR CHANGES TO LIST
       self.render();
     });
     return this;
